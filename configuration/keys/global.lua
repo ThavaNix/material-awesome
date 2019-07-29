@@ -11,6 +11,7 @@ local globalKeys =
   awful.util.table.join(
   -- Hotkeys
   awful.key({modkey}, 'F1', hotkeys_popup.show_help, {description = 'show help', group = 'awesome'}),
+  awful.key({modkey}, 's', hotkeys_popup.show_help, {description = 'show help', group = 'awesome'}),
   -- Tag browsing
   --awful.key({modkey}, 'w', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
   --awful.key({modkey}, 's', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
@@ -73,6 +74,14 @@ local globalKeys =
     'x',
     function()
       awful.spawn(apps.default.terminal)
+    end,
+    {description = 'open a terminal', group = 'launcher'}
+  ),
+  awful.key(
+    {modkey},
+    'Return',
+    function()
+      awful.spawn('termite')
     end,
     {description = 'open a terminal', group = 'launcher'}
   ),
@@ -158,7 +167,7 @@ local globalKeys =
   -- Dropdown application
   awful.key(
     {modkey},
-    '`',
+    '²',
     function()
       _G.toggle_quake()
     end,
@@ -250,7 +259,35 @@ local globalKeys =
       _G.exit_screen_show()
     end,
     {description = 'toggle mute', group = 'hotkeys'}
+  ),
+
+
+  -- Perso 
+  awful.key(
+    {modkey , 'Shift'},
+    'Return',
+    function()
+      awful.spawn('Thunar')
+    end,
+    {description = 'Gestionnaires des fichiers', group = 'launcher'}
+  ),
+  awful.key(
+    {modkey , 'Shift'},
+    'c',
+    function()
+      awful.spawn('code')
+    end,
+    {description = 'Code VSS', group = 'launcher'}
+  ) ,
+  awful.key(
+    {modkey , 'Shift'},
+    's',
+    function()
+      awful.spawn('subl3')
+    end,
+    {description = 'Sublime Text 3', group = 'launcher'}
   )
+
 )
 
 -- Bind all key numbers to tags.
