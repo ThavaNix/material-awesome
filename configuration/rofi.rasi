@@ -32,14 +32,13 @@ configuration {
 	active-foreground:           @text-color;
 	selected-active-background:  @actbg;
 	active-background:           @selbg;
-
-	line-margin:                 2;
-	line-padding:                2;
+	line-margin:                 1;
+	line-padding:                1;
 	separator-style:             "none";
 	hide-scrollbar:              "true";
 	margin:                      0px;
 	padding:                     0px;
-	font:            "Roboto medium 10";
+	font:            "Roboto medium 15";
 }
 
 window {
@@ -56,12 +55,12 @@ window {
 mainbox {
 	spacing:  0em;
 	padding: 0px;
-	width:200px;
+	width: 300px;
 	children: [ inputbar, listview, sidebar ];
 	expand: true;
 }
 
-button { padding: 5px 2px; }
+button { padding: 10px 4px; }
 
 button selected {
 	background-color: @active-background;
